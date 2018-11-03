@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var result: UITextField!
     var temp : Double = 0
     var example : Int = 0
-    
+    var per : Double = 0
     @IBAction func buttona(_ sender: Any) {
         result.text = result.text! + "1"
     }
@@ -46,9 +46,16 @@ class ViewController: UIViewController {
     }
     @IBAction func dot(_ sender: Any) {
         result.text = result.text! + "."
-        example = 5
+    }
+    @IBAction func fushu(_ sender: Any) {
+        result.text = result.text! + "-"
+    }
+    @IBAction func persent(_ sender: Any) {
+        per = Double(result.text!)! / 100
+        result.text = "\(per)"
     }
     @IBAction func AC(_ sender: Any) {
+        result.text = "0"
         result.text = ""
     }
     @IBAction func add(_ sender: Any) {
@@ -94,11 +101,6 @@ class ViewController: UIViewController {
             temp = temp / Double(result.text!)!
             result.text = "\(temp)"
         }
-        if (example == 5)
-        {
-            //temp = Double(result.text!)! / 10
-        }
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
